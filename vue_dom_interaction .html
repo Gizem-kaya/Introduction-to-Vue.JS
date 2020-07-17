@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+	<h1 v-once> {{ message }} </h1>			<!-- provides to show the data in the data segment after the first render -->
+	<h1> {{ message }} </h1>
+	<h1> {{ hello() }} <a v-bind:href = "link"> Click Here </a></h1>   <!--  binds the vue template and the vue instance -->
+	<h1 v-once> {{ message }} </h1>
+	
+</div>
+
+
+<script type="text/javascript">
+	new Vue({
+	el : "#app",
+	data : {
+		message : "Hello ",
+		name : "Gizem",
+		link : "https://github.com/Gizem-kaya/Vue.JS"
+	},
+	methods : {
+		hello : function(){
+			this.message = "Hi "
+			return this.message + this.name
+		}
+	}
+});
+</script>
+
+</body>
+</html>
