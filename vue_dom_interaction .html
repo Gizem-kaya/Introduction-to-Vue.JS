@@ -7,10 +7,12 @@
 <body>
 
 <div id="app">
-	<h1 v-once> {{ message }} </h1>			<!-- provides to show the data in the data segment after the first render -->
+	<h1 v-once> {{ message }} </h1>			<!-- provides to show the data in the data segment after the first render (directive v-once) -->
 	<h1> {{ message }} </h1>
-	<h1> {{ hello() }} <a v-bind:href = "link"> Click Here </a></h1>   <!--  binds the vue template and the vue instance -->
+	<h1> {{ hello() }} <a v-bind:href = "link"> Click Here </a></h1>   <!--  binds the vue template and the vue instance (directive v-bind)-->
 	<h1 v-once> {{ message }} </h1>
+	
+	<p v-html="secondLink"> </p>
 	
 </div>
 
@@ -21,7 +23,8 @@
 	data : {
 		message : "Hello ",
 		name : "Gizem",
-		link : "https://github.com/Gizem-kaya/Introduction-to-Vue.JS"
+		link : "https://github.com/Gizem-kaya/Vue.JS",
+		secondLink : "<a href = https://github.com/Gizem-kaya> Second Link </a>"
 	},
 	methods : {
 		hello : function(){
