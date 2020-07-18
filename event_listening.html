@@ -20,9 +20,11 @@
 	
 	<!-- <p v-on:mousemove = "getCoordinates"> Coordinates : {{x}}, {{y}} </p>   if we dont send any argument in vue template, we can have the event in our vue instance  -->
 	
-	<div v-on:mousemove = "getCoordinates(1, $event)"> Coordinates : {{x}}, {{y}} </div>	<!-- if we want to send two arguments and one of them is the event  -->
-
+	<div v-on:mousemove = "getCoordinates(1, $event)"> Coordinates : {{x}}, {{y}}	<!-- if we want to send two arguments and one of them is the event  -->
 	
+		<span v-on:mousemove.stop> Exceptional Region! </span>   <!-- function getCoordinates doesn't run on Exceptional Region because modifier .stop blocks mousemove event  -->
+	
+	</div>	
 
 </div>
 
