@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+	
+	
+	
+	<button v-on:click = "showAlert('Got Alerted!')"> Alert </button>
+	<button v-on:click = "increase(2)"> Increase by 2 </button>
+	<button v-on:click = "number--"> Decrease </button>
+	
+	<p>  {{number}} </p>
+	
+	<p>  Coordinate Counter : {{coordinateCounter}} </p>
+	
+	<!-- <p v-on:mousemove = "getCoordinates"> Coordinates : {{x}}, {{y}} </p>   if we dont send any argument in vue template, we can have the event in our vue instance  -->
+	
+	<div v-on:mousemove = "getCoordinates(1, $event)"> Coordinates : {{x}}, {{y}} </div>	<!-- if we want to send two arguments and one of them is the event  -->
+
+	
+
+</div>
+
+
+<script type="text/javascript">
+	new Vue({
+	el : "#app",
+	data : {
+		number : 0,
+		x : 0,
+		y : 0,
+		coordinateCounter : 0
+	},
+	methods : {		
+		showAlert: function(message) {
+			alert(message);		
+		},
+		increase : function(step) {
+			this.number+= step;
+		},
+		getCoordinates : function(step, event) {
+		
+			this.coordinateCounter+= step;
+			this.x = event.clientX;
+			this.y = event.clientY;
+		}
+	}
+	
+});
+</script>
+
+</body>
+</html>
